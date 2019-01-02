@@ -28,3 +28,4 @@
 
 /heroku/*
 *.sqlite3
+client/node_modules
