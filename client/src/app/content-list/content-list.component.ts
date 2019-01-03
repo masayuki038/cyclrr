@@ -16,7 +16,13 @@ export class ContentListComponent implements OnInit {
   ngOnInit() {
     this.apiService.get("contents").subscribe((data) => {
       console.log(data);
-      this.rows = data;
+      this.rows = data.data;
     });
   }
+
+  selectedContent: Object;
+  onSelect(content: Object): void {
+    console.log(content);
+    this.selectedContent = content;
+  }  
 }
