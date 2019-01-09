@@ -42,12 +42,11 @@ class ContentsController < ApplicationController
   # PATCH/PUT /contents/1
   # PATCH/PUT /contents/1.json
   def update
-    respond_to do |format|
-      if @content.update(content_params)
-        format.json { render :show, status: :ok, location: @content }
-      else
-        format.json { render json: @content.errors, status: :unprocessable_entity }
-      end
+    if @content.update(content_params)
+      render json: :no_content, status: :ok
+      #format.json { render :show, status: :ok, location: @content }
+    else
+      render json: @content.errors, status: :unprocessable_entity
     end
   end
 
@@ -69,6 +68,6 @@ class ContentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def content_params
-      params.require(:content).permit(:title, :content)
+      params.permit(:id, :title, :content, :created_at, :updated_at)
     end
 end

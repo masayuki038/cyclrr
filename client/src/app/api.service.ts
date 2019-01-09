@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ApiService {
-  API_URL: string = "http://192.168.99.100:3000/";
+  API_URL: string = "";
   constructor(
     private http: HttpClient, 
     private messageService: MessageService) { }
