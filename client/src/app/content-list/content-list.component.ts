@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Content } from '../content';
 
 @Component({
   selector: 'app-content-list',
@@ -9,20 +10,14 @@ import { ApiService } from '../api.service';
 export class ContentListComponent implements OnInit {
 
   public columns = ['id', 'name'];
-  public rows;
+  public rows: Content[];
 
   constructor(public apiService: ApiService) { }
 
   ngOnInit() {
-    this.apiService.get("contents").subscribe((data) => {
-      console.log(data);
-      this.rows = data.data;
+    this.apiService.getContents().subscribe((contents) => {
+      console.log(contents);
+      this.rows = contents;
     });
   }
-
-  selectedContent: Object;
-  onSelect(content: Object): void {
-    console.log(content);
-    this.selectedContent = content;
-  }  
 }

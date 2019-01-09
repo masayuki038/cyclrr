@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Content.create!([
-	{ title: "Title 1", content: "Content1"},
-	{ title: "Title 2", content: "Content2"},
-	{ title: "Title 3", content: "Content3"},
-	{ title: "Title 4", content: "Content4"}
+	{ id: 1, title: "Title 1", content: "Content1"},
+	{ id: 2, title: "Title 2", content: "Content2"},
+	{ id: 3, title: "Title 3", content: "Content3"},
+	{ id: 4, title: "Title 4", content: "Content4"}
 ])

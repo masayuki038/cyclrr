@@ -5,12 +5,13 @@ class ContentsController < ApplicationController
   # GET /contents.json
   def index
     @contents = Content.all
-    render json: {status: 200, data: @contents}
+    render json: @contents
   end
 
   # GET /contents/1
   # GET /contents/1.json
   def show
+    render json: @content
   end
 
   # GET /contents/new
@@ -43,10 +44,8 @@ class ContentsController < ApplicationController
   def update
     respond_to do |format|
       if @content.update(content_params)
-        format.html { redirect_to @content, notice: 'Content was successfully updated.' }
         format.json { render :show, status: :ok, location: @content }
       else
-        format.html { render :edit }
         format.json { render json: @content.errors, status: :unprocessable_entity }
       end
     end

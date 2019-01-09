@@ -1,18 +1,9 @@
 <h2>Contents</h2>
 <ul class="contents">
-  <li *ngFor="let content of rows" (click)="onSelect(content)">
-   <span class="badge">{{content.title}}</span>
+  <li *ngFor="let content of rows">
+    <a routerLink="/detail/{{content.id}}">
+      <span class="badge">{{content.title}}</span>
+    </a>
   </li>
 </ul>
 
-<div *ngIf="selectedContent">
-  <h2>{{selectedContent.title | uppercase}} Details</h2>
-  <div>
-    <span>title: </span>{{selectedContent.title}}
-  </div>
-  <div>
-    <label>name: 
-      <input [(ngModel)]="selectedContent.content" placeholder="content">
-    </label>
-  </div>
-</div>
