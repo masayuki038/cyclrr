@@ -1,9 +1,12 @@
 <div *ngIf="content">
   <h2>{{content.title | uppercase}}</h2>
-  <div><span>title: </span>{{content.title}}</div>
   <div>
-    <label>name:
-      <input [(ngModel)]="content.content" placeholder="content"/>
+    <label>Title: 
+      <input [(ngModel)]="content.title" placeholder="title"/>
+    </label>
+  <div>
+    <label>Content:
+      <textarea [(ngModel)]="content.content" cols="100" rows="20" placeholder="content"></textarea>
     </label>
   </div>
   <button (click)="goBack()">go back</button>
