@@ -20,7 +20,14 @@ import { AuthGuard } from './_guards/auth.guard';
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
 import { fakeBackendProvider } from './_helpers/fake-backend';
-import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { MatButtonModule,
+				 MatCheckboxModule,
+				 MatToolbarModule,
+				 MatListModule,
+				 MatFormFieldModule,
+				 MatCardModule,
+				 MatInputModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [ 
@@ -41,12 +48,18 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
     FormsModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatToolbarModule,
+		MatListModule,
+		MatFormFieldModule,
+		MatInputModule,
+		MatCardModule,
     HttpClientModule,
     HttpClientXsrfModule.withOptions({
       cookieName: 'X_CSRF_Token',
       headerName: 'X-CSRF-Token'
     }),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FlexLayoutModule
   ],
   providers: [
     ApiService,

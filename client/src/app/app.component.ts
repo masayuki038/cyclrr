@@ -8,7 +8,7 @@ import { User } from './_models/user';
 @Component({
   selector: 'app',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css']
+  styleUrls: ['app.component.scss']
 })
 export class AppComponent {
   title = 'cyclrr';

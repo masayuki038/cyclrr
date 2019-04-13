@@ -7,7 +7,7 @@ import { Content } from '../content';
 @Component({
   selector: 'app-content-detail',
   templateUrl: './content-detail.component.html',
-  styleUrls: ['./content-detail.component.css']
+  styleUrls: ['./content-detail.component.scss']
 })
 export class ContentDetailComponent implements OnInit {
   public content: Content;

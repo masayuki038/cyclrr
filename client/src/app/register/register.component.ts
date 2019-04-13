@@ -7,7 +7,10 @@ import { AuthenticationService } from '../_services/authentication.service';
 import { AlertService } from '../_services/alert.service';
 import { UserService } from '../_services/user.service';
 
-@Component({templateUrl: 'register.component.html'})
+@Component({
+  templateUrl: 'register.component.html',
+  styleUrls: ['register.component.scss']
+})
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   loading = false;

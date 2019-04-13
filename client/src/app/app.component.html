@@ -1,12 +1,9 @@
-<!-- nav -->
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/">Home</a>
-        <a class="nav-item nav-link" (click)="logout()">Logout</a>
-  			<a mat-raised-button routerLink="/dashboard">Dashboard</a>
-  			<a mat-raised-button routerLink="/contents">Contents</a>
-    </div>
-</nav>
+<mat-toolbar class="toolbar" color="primary" *ngIf="currentUser">
+  <a class="nav-item nav-link" routerLink="/">cyclrr</a>
+  <a class="nav-item nav-link" routerLink="/contents">Contents</a>
+  <span class="fill-remaining-space"></span>
+  <a class="nav-item nav-link" (click)="logout()" href=".">Logout</a>
+</mat-toolbar>
 
 <!-- main app container -->
 <div class="jumbotron">
